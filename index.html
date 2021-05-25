@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: cadetblue;
+        }
+        .sun {
+            position: absolute;
+            background-color: yellow;
+            border-radius: 50%;
+            width:100px;
+            height: 100px;
+            bottom:0px;
+            left: 0px;
+            transform: translateX(90vw);
+            /* transform: translateY(-50vh); */
+
+        }
+
+        .grass {
+            display: none;
+            position: absolute;
+            background-color: green;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30vh;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="sun"></div>
+    <div class="grass"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script>
+        gsap.set('.sun', {x:0, y: 0})
+    gsap.to(
+'.sun', 2 ,{ x: 50 })
+gsap.to('.sun', 2 , {y: 100})
+gsap.to('.sun', 2 , { x: 100})
+gsap.to('.sun', 2 , {y: 0})
+     </script>
+</body>
+</html>
