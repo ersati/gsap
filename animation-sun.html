@@ -17,19 +17,20 @@
             height: 100px;
             bottom:0px;
             left: 0px;
-            transform: translateX(90vw);
+            /* transform: translateX(90vw); */
             /* transform: translateY(-50vh); */
-
+            box-shadow: 5px 5px 5px 5px grey;
         }
 
         .grass {
-            display: none;
+         /* display: none; */
             position: absolute;
             background-color: green;
             bottom: 0;
             left: 0;
             right: 0;
             height: 30vh;
+            
         }
 
     </style>
@@ -40,12 +41,9 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script>
-        gsap.set('.sun', {x:0, y: 0})
-    gsap.to(
-'.sun', 2 ,{ x: 50 })
-gsap.to('.sun', 2 , {y: 100})
-gsap.to('.sun', 2 , { x: 100})
-gsap.to('.sun', 2 , {y: 0})
+     gsap.fromTo('.sun', 6 , {y:0, x:0, } , { y:-700, x: 700, ease: "power1.in",  backgroundColor: 'orange', delay:0.5})
+     gsap.fromTo('.sun', 1 , {y:-700, x:700, } , { y:-700, x: 900, ease: "power1.in",  backgroundColor: 'orange',delay: 6.5})
+        gsap.fromTo('.sun', 6 , {y:-700, x:900, backgroundColor: 'orange'} , { y:0, x: 1600, ease: "power1.out", backgroundColor: 'yellow', delay: 7.5})
      </script>
 </body>
 </html>

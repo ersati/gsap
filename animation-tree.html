@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation tree</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: crimson;
+            margin: 50px;
+
+        }
+
+
+
+        .el1{
+            transform: translateX(90vw);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="el1"></div>
+    <div class="el2"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+
+    <script >
+        gsap.from('.el1', 2 , { x: 0 ,repeat: -1, yoyo:true, ease: Back.easeOut.config(3)})
+        gsap.fromTo('.el2', 2 , {y:100, x:100, backgroundColor: 'yellow'} , { y:300, x: 400, ease: "back.in(3)",  backgroundColor: 'orange', delay:0.5})
+        gsap.fromTo('.el2', 2 , {y:300, x:400, backgroundColor: 'orange'} , { y:100, x: 800, ease: "back.out(3)", backgroundColor: 'yellow', delay: 2.5})
+    </script>
+</body>
+</html>
