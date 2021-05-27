@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>squares</title>
+    <style>
+        div {
+             width: 100px;
+             height: 100px;
+             background-color: cadetblue;
+             margin: 50px;
+            visibility:hidden
+        }
+
+        .e1{
+            transform: translateX(50vw);
+        }
+    </style>
+</head>
+<body>
+    <div class="e1"></div>
+    <div class="e2"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script>
+        gsap.set('div', { visibility: "visible", width: 300, border: "2px solid red"})
+        gsap.from('.e1',2,{x:0,repeat: -1, yoyo:true, ease: Back.easeOut.config(3)});
+        gsap.fromTo('.e2', 4, {y:100}, { y:300})
+    </script>
+</body>
+</html>
